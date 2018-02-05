@@ -1,6 +1,6 @@
 {
-    "name": "mitsuru793/php-cast-design",
-    "description": "",
+    "name": "mitsuru793/php-dynamic-cast",
+    "description": "You can cast value dynamically with helper function.",
     "type": "library",
     "require": {
         "tightenco/collect": "^5.5",
@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-            "PhpCastDesign\\": "src/"
+            "PhpDynamicCast\\": "src/"
         },
         "files": ["src/functions.php"]
     },

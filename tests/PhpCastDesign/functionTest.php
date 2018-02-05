@@ -1,10 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace PhpCastDesign;
+namespace PhpDynamicCast;
 
 use PHPUnit\Framework\TestCase;
-use TypeException;
 
 final class functionTest extends TestCase
 {

@@ -1,10 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace PhpCastDesign;
+namespace PhpDynamicCast;
 
 use Closure;
-use TypeException;
 
 /**
  * @param mixed $val
