@@ -14,8 +14,9 @@
     },
     "autoload": {
         "psr-4": {
-            "PhpCastDesign\\": "src/PhpCastDesign"
-        }
+            "PhpCastDesign\\": "src/"
+        },
+        "files": ["src/functions.php"]
     },
     "autoload-dev": {
         "psr-4": {
