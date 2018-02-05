@@ -1,16 +1,9 @@
-# PhpDynamicCast
-
-You can cast value dynamically with helper function.
-
-Type is a primitive, class, or closure.
-
-```php
 <?php
-// example/index.php
-require __DIR__ . '/vendor/autoload.php';
 
-use function PhpCastDesign\cast;
-use PhpCastDesign\TypeException;
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use PhpDynamicCast\TypeException;
+use function PhpDynamicCast\cast;
 
 cast(1, 'bool'); // true
 
@@ -36,11 +29,3 @@ try {
     cast(0, 'undefined type');
 } catch (TypeException $e) {
 }
-```
-
-**primitive type**
-
-+ bool/boolean
-+ int/integer
-+ float
-+ string
