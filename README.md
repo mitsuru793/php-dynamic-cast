@@ -27,10 +27,18 @@ class Text
     {
         $this->val = $val;
     }
+    
+    public static function fromBool($val)
+    {
+        return new self($val ? 'on' : 'off');
+    }
 }
 
 $text = cast('hi', Text::class);
 $text->val; // 'hi'
+
+$text = cast(true, Text::class . '::fromBool');
+$text->val; // 'yes'
 
 try {
     cast(0, 'undefined type');

@@ -17,6 +17,10 @@ function cast($val, $type)
         return $type($val);
     }
 
+    if (is_callable($type)) {
+        return call_user_func($type, $val);
+    }
+
     $originType = $type;
 
     $alias = [

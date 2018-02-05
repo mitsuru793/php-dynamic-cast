@@ -69,6 +69,26 @@ final class functionTest extends TestCase
 
     /**
      * @throws TypeException
+     */
+    public function testCastByFunction()
+    {
+        $this->assertSame(6, cast(3, __NAMESPACE__ . '\toDouble'));
+    }
+
+    /**
+     * @throws TypeException
+     * @throws \PHPUnit\Framework\Exception
+     */
+    public function testCastByClassMethod()
+    {
+        $actual = cast(true, DummyText::class . '::fromBool');
+
+        $this->assertSame('on', $actual->val);
+        $this->assertInstanceOf(DummyText::class, $actual);
+    }
+
+    /**
+     * @throws TypeException
      * @throws \PHPUnit\Framework\Exception
      */
     public function testCastByClass()
@@ -95,8 +115,18 @@ class DummyText
 {
     public $val;
 
-    public function __construct($val)
+    public function __construct(string $val)
     {
         $this->val = $val;
     }
+
+    public static function fromBool(bool $val): self
+    {
+        return new self($val ? 'on' : 'off');
+    }
+}
+
+function toDouble($num)
+{
+    return $num * 2;
 }
